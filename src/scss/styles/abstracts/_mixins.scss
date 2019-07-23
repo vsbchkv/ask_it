@@ -1,0 +1,90 @@
+// variables
+//$mobile: 750px;
+//$tabletPortrait: 768px;
+//$tabletLandscape: 1024px; default
+//$tabletLandscape: 1536px;
+//$desktop: 1440px;
+//$desktopMax: 1700px;
+
+// px to rem
+@function strip-units($pxval) {
+  @return $pxval / ($pxval * 0 + 1);
+}
+
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $baseFontSize;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+
+// px to vw
+@function strip-units($pxval) {
+  @return $pxval / ($pxval * 0 + 1);
+}
+
+@function vw($base, $pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 100vw;
+}
+
+// photoshop letterspacing to px
+@function letterspace($val) {
+  @return ( $val / 1000 ) * 1em
+}
+
+@mixin padding-size-vw-all($padding-top, $padding-right, $padding-bottom, $padding-left, $display) {
+  padding-top: ($padding-top / $display) *100vw;
+  padding-right: ($padding-right / $display) *100vw;
+  padding-bottom: ($padding-bottom / $display) *100vw;
+  padding-left: ($padding-left / $display) *100vw;
+}
+
+@mixin margin-size-vw-all($margin-top, $margin-right, $margin-bottom, $margin-left, $display) {
+  margin-top: ($margin-top / $display) *100vw;
+  margin-right: ($margin-right / $display) *100vw;
+  margin-bottom: ($margin-bottom / $display) *100vw;
+  margin-left: ($margin-left / $display) *100vw;
+}
+
+@mixin img-container() {
+  position: relative;
+  & img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+
+@mixin inline-block-fix() {
+  letter-spacing: -0.35em;
+  > * {
+    letter-spacing: normal;
+  }
+}
+
+@mixin clearfix() {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}

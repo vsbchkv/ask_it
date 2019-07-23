@@ -1,0 +1,204 @@
+.explication__wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 75.567vw;
+  margin: 0 auto 8.9vw;
+  text-align: center;
+  padding-top: 6.5vw;
+}
+
+.explication__title {
+  letter-spacing: 0.7vw;
+  margin-bottom: 5vw;
+}
+
+.explication__list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.explication__item {
+  padding: 3.8vw 0 3.3vw;
+  flex-basis: 50%;
+  .icon {
+    background-size: 15.7vw;
+
+    &[data-icon="account"] {
+      background-position: -1.867vw -5.333vw;
+    }
+
+    &[data-icon="qa"] {
+      background-position: -1.467vw -20.833vw;
+    }
+
+    &[data-icon="share"] {
+      background-position: -1.567vw -35.433vw;
+    }
+
+    &[data-icon="meeting"] {
+      background-position: -2.367vw -51.233vw;
+    }
+  }
+}
+
+.explication__icon {
+  width: vw($mobile, 95px);
+  height: vw($mobile, 95px);
+  border: 1px solid $turquoise;
+  margin: 0 auto 5.24vw;
+  background-size: 15.7vw;
+}
+
+.explication__text {
+  font-size: vw($mobile, 21px);
+  color: $turquoise;
+  line-height: 1.2;
+  letter-spacing: 0.05vw;
+}
+
+// Tablet
+@media screen and (min-width: $tabletPortrait){
+  .explication__wrapper {
+    padding-top: 2.05vw;
+    width: 84.567vw;
+    margin: 0 auto 0.1vw;
+  }
+
+  .explication__title {
+    letter-spacing: 0.49vw;
+    left: 3.1vw;
+    margin-bottom: 3.8vw;
+  }
+
+  .explication__list {
+    flex-wrap: wrap;
+  }
+
+  .explication__item {
+    flex-basis: 25%;
+    padding: 0 0 1.8vw;
+
+    .icon {
+      background-size: 8.7vw;
+
+      &[data-icon="account"] {
+        background-position: -1.167vw -2.833vw;
+      }
+      &[data-icon="qa"] {
+        background-position: -0.967vw -11.133vw;
+      }
+      &[data-icon="share"] {
+        background-position: -1.067vw -19.733vw;
+      }
+      &[data-icon="meeting"] {
+        background-position: -1.367vw -28.633vw;
+      }
+    }
+  }
+
+  .explication__icon {
+    width: 6.8vw;
+    height: 6.8vw;
+    margin: 0 auto 2.64vw;
+    background-size: 8.7vw;
+  }
+
+  .explication__text {
+    font-size: 1.5vw;
+  }
+}
+
+// Desktop
+@media screen and (min-width: $tabletLandscape + 1px) {
+  .explication__wrapper {
+    padding-top: 66px;
+    margin: 0 auto;
+    width: 900px;
+  }
+
+  .explication__title {
+    letter-spacing: 0;
+    font-size: 43px;
+    margin-bottom: 46px;
+  }
+
+  .explication__list {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 74px;
+  }
+
+  .explication__item {
+    flex-basis: 25%;
+    padding: 22px 5px 14px;
+
+    &.explication__item:nth-child(odd) {
+      .explication__link:after {
+        top: 1000px;
+      }
+    }
+
+    .icon {
+      background-size: 130%;
+
+      &[data-icon="account"] {
+        background-position: -15px -37px;
+      }
+      &[data-icon="qa"] {
+        background-position: -11px -134px;
+      }
+      &[data-icon="share"] {
+        background-position: -13px -235px;
+      }
+      &[data-icon="meeting"] {
+        background-position: -17px -342px;
+      }
+    }
+  }
+
+
+  .explication__icon {
+    width: 82px;
+    height: 82px;
+    margin: 0 auto 30px;
+
+  }
+
+  .explication__link {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $turquoise;
+      top: -1000px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $white;
+      transition: color 0.35s;
+      &:after {
+        top: 0!important; //разобраться
+        transition: top 0.3s;
+      }
+      }
+    }
+
+  .explication__text {
+    font-size: 19px;
+    letter-spacing: 0;
+  }
+}
