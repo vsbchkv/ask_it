@@ -800,11 +800,14 @@ button {
 @media screen and (min-width: 768px) {
   .header {
     height: 8.688vw;
-    padding: 0 0 0 25.1vw;
+    padding: 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
-            flex-direction: row; }
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .header__nav {
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
@@ -860,14 +863,10 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
-    height: 104px;
-    padding: 0; }
+    height: 104px; }
   .header__nav {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
