@@ -210,11 +210,11 @@
     font-size: 42px;
     margin-bottom: 30px;
     &:before {
-      left: 130px;
+      left: 125px;
     }
     &:after{
       left: auto;
-      right: 0;
+      right: 6px;
     }
   }
   .company__about {
