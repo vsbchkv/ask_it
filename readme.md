@@ -63,5 +63,5 @@ CONTACTS
 
 Вячеслав Бычков, верстальщик.
 
-Email: [vsbychkov85@gmail.com](vsbychkov85@gmail.com)  
+Email: vsbchkv.4work@gmail.com  
 Telegram: @vsbchkv
