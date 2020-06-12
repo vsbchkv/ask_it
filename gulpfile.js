@@ -1,70 +1,88 @@
-var gulp = require('gulp'),
-    prefixer = require('gulp-autoprefixer'),
-    sass = require('gulp-sass'),
-    server = require('gulp-server-livereload');
-    //cssnano = require('gulp-cssnano'),
-    //sourcemaps = require('gulp-sourcemaps');
+const { gulp, watch, series, src, dest, parallel } = require('gulp');
+const sass = require('gulp-sass');
+const plumber = require('gulp-plumber');
+const server = require('browser-sync').create();
+const postcss = require('gulp-postcss');
 
-
-var path = {
-    dist: { //Тут мы укажем куда складывать готовые после сборки файлы
-        html: 'dist/',
-        js: 'dist/js/',
-        css: 'dist/css/',
-        img: 'dist/img/',
-        fonts: 'dist/fonts/'
-    },
-    src: { //Пути откуда брать исходники
-        html: 'src/*.html', //Синтаксис src/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        js: 'src/js/**/*.js',
-        style: 'src/scss/*.scss',
-        img: 'src/img/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        fonts: 'src/fonts/**/*.*'
-    }
+// path
+const config = {
+  // html
+  html: {
+    src: 'src/index.html',
+    dist: 'build/'
+  },
+  // css
+  styles: {
+    src: 'src/scss/**/*.scss',
+    dist: 'build/css/'
+  },
+  // img
+  images: {
+    src: 'src/img/**/*.*',
+    dist: 'build/img/'
+  },
+  // fonts
+  fonts: {
+    src: 'src/fonts/**/*.*',
+    dist: 'build/fonts/'
+  },
+  // scipts
+  scripts: {
+    src: 'src/js/**/*.js',
+    dist: 'build/js/'
+  }
 };
 
-gulp.task('html', function() { //HTML просто перемещаем, без обработки
-  return gulp.src(path.src.html)
-    .pipe(gulp.dest(path.dist.html))
-});
+// html
+function html() {
+  return src(config.html.src)
+    .pipe(plumber())
+    .pipe(dest(config.html.dist))
+    .pipe(server.stream());
+}
 
-gulp.task('images', function() { //Картинки просто перемещаем, без обработки
-  return gulp.src(path.src.img)
-    .pipe(gulp.dest(path.dist.img))
-});
+// styles
+function css() {
+  return src(config.styles.src)
+    .pipe(plumber())
+    .pipe(sass({outputStyle: 'expanded'}))
+    .pipe(postcss([
+      require('autoprefixer'),
+      require('postcss-discard-comments'),
+      require('postcss-csso')
+    ]))
+    .pipe(dest(config.styles.dist))
+    .pipe(server.stream());
+}
 
-gulp.task('scripts', function() { //Картинки просто перемещаем, без обработки
-  return gulp.src(path.src.js)
-    .pipe(gulp.dest(path.dist.js))
-});
+function scripts() {
+    return src(config.scripts.src)
+    .pipe(plumber())
+    .pipe(dest(config.scripts.dist))
+    .pipe(server.stream());
+}
 
-gulp.task('styles', function () { //CSS сборка
-    gulp.src(path.src.style) //Выберем наш styles.scss
-        .pipe(sass().on('error', sass.logError)) //Скомпилируем
-        .pipe(prefixer({
-            browsers: ['last 5 versions']
-        })) //Добавим вендорные префиксы
-        /*.pipe(sourcemaps.init())
-        .pipe(cssnano())
-        .pipe(sourcemaps.write('.'))*/
-        .pipe(gulp.dest(path.dist.css)) //И в build
-    ;
-});
+function images() {
+  return src(config.images.src)
+  .pipe(dest(config.images.dist))
+  .pipe(dest(config.images.dist));
+}
 
-gulp.task('refresh', function() {
-    gulp.src('dist')
-        .pipe(server({
-            livereload: true,
-            //defaultFile: 'index.html',
-            directoryListing: false,
-            open: false
-        }));
-});
+function load() {
+  server.init({
+    port: 7070,
+    server: {
+      baseDir: "build/",
+    }
+  });
+}
 
-gulp.task('watcher',function() {
-    gulp.watch('src/**/*.scss', ['styles']);
-});
+function watcher() {
+  watch(
+    [config.html.src, config.styles.src, config.images.src, config.scripts.src],
+    parallel(html, css, images)
+  );
+}
 
-gulp.task('build', ['html', 'styles', 'images', 'scripts']);
-
-gulp.task('default', ['refresh','watcher']);
+// default: gulp
+exports.default = series(parallel(html, css, images, scripts, watcher, load));
