@@ -28,21 +28,6 @@
 .navigation__link {
   text-align: center;
   color: $white;
-
-  @supports (background-clip: text) {
-    color: transparent;
-    background: linear-gradient(to right, $white, $turquoise);
-    background-clip: text;
-  }
-  /* stylelint-disable */
-  @supports (-webkit-text-fill-color: transparent) {
-
-    background: linear-gradient(to right, $white, $turquoise);
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }
 /* stylelint-enable */
 
@@ -177,6 +162,23 @@
   .navigation_active {
     top: 0;
     transition: top 0.35s ease-out;
+  }
+
+  .navigation__link {
+    @supports (background-clip: text) {
+      color: transparent;
+      background: linear-gradient(to right, $white, $turquoise);
+      background-clip: text;
+    }
+    /* stylelint-disable */
+    @supports (-webkit-text-fill-color: transparent) {
+  
+      background: linear-gradient(to right, $white, $turquoise);
+  
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   .header__sandwich {
