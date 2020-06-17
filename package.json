@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "styles:fix": "stylelint --ignore-path .gitignore **/styles/**/*.scss --syntax scss --fix",
-    "styles:lint": "stylelint --ignore-path .gitignore **/styles/**/*.scss --syntax scss"
+    "styles:lint": "stylelint --ignore-path resetNormalize.scss **/styles/**/*.scss --syntax scss"
   },
   "author": "",
   "license": "ISC",
