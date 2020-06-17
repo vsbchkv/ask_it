@@ -2,16 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   padding-top: 7.6vw;
+  text-align: center;
 }
 
 .company__title {
   left: 2.4vw;
   margin-bottom: 18.7vw;
+
   &:before {
     left: 17.1vw;
   }
+
   &:after {
     left: 19.8vw;
   }
@@ -19,14 +21,14 @@
 
 .company__statistic {
   position: relative;
+  left: 0.3vw;
   display: flex;
   justify-content: center;
   flex-flow: row wrap;
   width: 78.63vw;
-  color: #000;
-  list-style-type: none;
-  left: 0.3vw;
   margin: 0 auto 11vw;
+  color: $black;
+  list-style-type: none;
 }
 
 .company__item {
@@ -34,125 +36,128 @@
   display: flex;
   flex-direction: column;
   flex: 0 0 33.333%;
-  color: #4ca59a;
+  color: $lightGreen;
+
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -9.5vw) scale(1);
     width: vw($mobile, 48px);
     height: vw($mobile, 48px);
+    color: $lightGreen;
+    background-color: $lightGreen;
+    transform: translate(-50%, -9.5vw) scale(1);
     border-radius: 50%;
-    background-color: #4ca59a;
     box-sizing: border-box;
-    border: 0.2vw solid #fff;
-    color: #4ca59a;
+    border: 0.2vw solid $white;
     box-shadow: 0 0 0 1.5vw;
   }
+
   &:after {
-    content: "";
+    content: '';
     position: relative;
     bottom: -4.4vw;
-    margin: 0 auto;
     width: 22.767vw;
     height: vw($mobile, 4px);
-    background-color: #4ca59a;
+    margin: 0 auto;
+    background-color: $lightGreen;
   }
-  /*&:hover:before {
-    animation: pulse 0.75s infinite;
-    transform: translate(-50%, -150%) scale(1);
-    color: #4ca59a;
-  }*/
-  // это в десктоп
 }
 
 .company__counter {
-  font-size: vw($mobile, 51px);
   margin-bottom: 2vw;
+  font-size: vw($mobile, 51px);
 }
 
 .company__desc {
   font-size: vw($mobile, 24px);
-  color: #2d2d2d;
   font-weight: 300;
   letter-spacing: 0.069vw;
+  color: $grey;
 }
 
-.company__item[data-item="hours"] {
-  color: #f26250;
+.company__item[data-item='hours'] {
+  color: $lightRed;
+
   &:before {
-    background-color: #f26250;
-    color: #f26250;
+    background-color: $lightRed;
+    color: $lightRed;
   }
+
   &:after {
-    background-color: #f26250;
+    background-color: $lightRed;
   }
 }
 
-.company__item[data-item="event"] {
-  color: #f0a765;
+.company__item[data-item='event'] {
+  color: $orange;
+
   &:before {
-    background-color: #f0a765;
-    color: #f0a765;
+    background-color: $orange;
+    color: $orange;
   }
+
   &:after {
-    background-color: #f0a765;
+    background-color: $orange;
   }
 }
 
 .company__heading {
+  margin-bottom: 1.3vw;
   font-size: vw($mobile, 45px);
   color: $turquoise;
-  margin-bottom: 1.3vw;
 }
 
 .company__subheading {
-  color: $turquoise;
+  margin-bottom: 6.7vw;
   font-size: vw($mobile, 23px);
   letter-spacing: 0.2vw;
-  margin-bottom: 6.7vw;
+  color: $turquoise;
+
   &:after {
-    content: "";
-    display: block;
+    content: '';
     position: relative;
     bottom: -2vw;
-    margin: 0 auto;
+    display: block;
     width: 18.667vw;
     height: vw($mobile, 1px);
-    background-color: #4ca59a;
+    margin: 0 auto;
+    background-color: $lightGreen;
   }
 }
 
 .company__description {
-  font-size: vw($mobile, 17px);
-  color: #212121;
   margin: 0 13.5vw 18vw;
+  font-size: vw($mobile, 17px);
   line-height: 1.2;
+  color: $darkGrey;
 }
 
 // Tablet
 @media screen and (min-width: $tabletPortrait) and (max-width: $tabletLandscape) {
+
   .company__wrapper {
     padding-top: 7.5vw;
   }
 
   .company__title {
     left: 0.5vw;
+    margin-bottom: 24.4vw;
     font-size: 3.267vw;
     letter-spacing: 0.2vw;
-    margin-bottom: 24.4vw;
 
     &:before {
+      bottom: -0.35vw;
       left: 8.6vw;
       width: 0.533vw;
       height: 0.233vw;
-      bottom: -0.35vw;
     }
+
     &:after {
+      bottom: -0.35vw;
       left: 9.9vw;
       width: 3.533vw;
       height: 0.233vw;
-      bottom: -0.35vw;
     }
   }
 
@@ -162,6 +167,7 @@
   }
 
   .company__item {
+
     &:after {
       bottom: -4.9vw;
     }
@@ -176,8 +182,8 @@
   }
 
   .company__subheading {
-    font-size: 3.267vw;
     margin-bottom: 7.3vw;
+    font-size: 3.267vw;
 
     &:after {
       bottom: -2.2vw;
@@ -194,55 +200,58 @@
 @media screen and (min-width: $tabletLandscape + 1px) {
 
   .company__wrapper {
-    padding-top: 38px;
     width: $contentMaxWidth;
     margin: 0 auto;
+    padding-top: 38px;
   }
 
   .company__inner {
     display: flex;
     flex-direction: row-reverse;
     margin-bottom: 84px;
-
   }
 
   .company__title {
-    font-size: 42px;
     margin-bottom: 30px;
+    font-size: 42px;
+
     &:before {
       left: 125px;
     }
-    &:after{
-      left: auto;
+
+    &:after {
       right: 6px;
+      left: auto;
     }
   }
+
   .company__about {
     padding-top: 18px;
-    text-align: left;
     padding-left: 10.6%;
+    text-align: left;
   }
 
   .company__heading {
-    font-size: 42px;
     margin-bottom: 0;
+    font-size: 42px;
   }
 
   .company__subheading {
+    margin-bottom: 18px;
     font-size: 21px;
     letter-spacing: 0.08em;
-    margin-bottom: 18px;
 
     &:after {
+      right: -81px;
       bottom: 4px;
       width: 129px;
       height: 2px;
-      right: -81px;
     }
   }
+
   .company__description {
-    font-size: 14px;
     margin: 0;
+    font-size: 14px;
   }
 
   .company__metrics {
@@ -251,10 +260,11 @@
   }
 
   .company__counter {
-    font-size: 36px;
     margin-bottom: 2px;
+    font-size: 36px;
     line-height: 1.7;
   }
+
   .company__statistic {
     width: 100%;
     margin-bottom: 0;
@@ -265,12 +275,13 @@
   }
 
   .company__item {
-    width: 33%;
     flex: auto;
+    width: 33%;
+
     &:before {
       width: 32px;
-      height: 32px;;
-      border: 3px solid #fff;
+      height: 32px;
+      border: 3px solid $white;
       box-shadow: 0 0 0 10px;
       transform: translate(-50%, -126%);
     }

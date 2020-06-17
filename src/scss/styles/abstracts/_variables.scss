@@ -3,18 +3,23 @@ $mobile: 750px;
 $tabletPortrait: 768px;
 $tabletLandscape: 1024px;
 $desktop: 1440px;
-$desktopMax: 1700px;
-//$tablet: 1536px;
 $tablet: 1024px;
 $contentMaxWidth: 980px;
 // colors
 $white: #fff;
 $black: #0b0708;
 $turquoise: #037693;
+$lightRed: #ff3535;
+$lightGreen: #4ca59a;
+$orange: #f0a765;
+$yellow: #f1b451;
+$darkGrey: #1d1d1d;
+$grey: #2d2d2d;
+$color: #212121;
 
 // fonts
 $lato: 'Lato', sans-serif;
 $baseFontSize: 16px;
 
 // paths
-$imgPath: "../img";
+$imgPath: '../img';

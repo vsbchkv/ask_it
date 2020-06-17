@@ -1,91 +1,237 @@
-﻿/* --------------- reset.css --------------- */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,  dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	vertical-align: baseline;
-	background: transparent;
-	font-size: 100%;
+/* --------------- reset.css --------------- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  border: 0;
+  outline: 0;
 }
+
 a {
-	margin:0;
-	padding:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
+
 table {
-	border-collapse: collapse; 
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
-td, td img {
-	vertical-align: top;
-} 
-input, select, button, textarea {
-	margin: 0;
-	font-size: 100%;
+
+td,
+td img {
+  vertical-align: top;
 }
-input[type="text"], input[type="password"], textarea {
-	padding: 0;
+
+input,
+select,
+button,
+textarea {
+  margin: 0;
+  font-size: 100%;
 }
-input[type="checkbox"] {
-	vertical-align: bottom;
+
+input[type='text'],
+input[type='password'],
+textarea {
+  padding: 0;
 }
-input[type="radio"] {
-	vertical-align: text-bottom;
+
+input[type='checkbox'] {
+  vertical-align: bottom;
 }
+
+input[type='radio'] {
+  vertical-align: text-bottom;
+}
+
 sub {
-	vertical-align: sub;
-	font-size: smaller;
+  vertical-align: sub;
+  font-size: smaller;
 }
+
 sup {
-	vertical-align: super;
-	font-size: smaller;
+  vertical-align: super;
+  font-size: smaller;
 }
+
 ins {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 del {
-	text-decoration: line-through; 
+  text-decoration: line-through;
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
-	display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
 }
+
 nav ul {
-	 list-style:none;
+  list-style: none;
 }
+
 html {
-	overflow-y: scroll; 
+  overflow-y: scroll;
 }
+
 body {
-	background: #fff;
-}
-label, input[type="button"], input[type="submit"], button {
-	cursor: pointer;
-}
-blockquote, q {
-	quotes: none; 
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: ''; 
-	content: none; 
+  background: #fff;
 }
 
-input::-webkit-input-placeholder      { opacity: 1 !important; }
-input::-moz-placeholder                        { opacity: 1 !important; }
-input:-moz-placeholder                          { opacity: 1 !important; }
-input:-ms-input-placeholder                { opacity: 1 !important; }
-textarea::-webkit-input-placeholder { opacity: 1 !important; }
-textarea::-moz-placeholder                   { opacity: 1 !important; }
-textarea:-moz-placeholder                     { opacity: 1 !important; }
-textarea:-ms-input-placeholder           { opacity: 1 !important; }
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
 
-input[type="submit"]::-moz-focus-inner { padding:0; border:0 }
-input[type="button"]::-moz-focus-inner { padding:0; border:0 }
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+input::-webkit-input-placeholder {
+  opacity: 1 !important;
+}
+
+input::-moz-placeholder {
+  opacity: 1 !important;
+}
+
+input:-moz-placeholder {
+  opacity: 1 !important;
+}
+
+input:-ms-input-placeholder {
+  opacity: 1 !important;
+}
+
+textarea::-webkit-input-placeholder {
+  opacity: 1 !important;
+}
+
+textarea::-moz-placeholder {
+  opacity: 1 !important;
+}
+
+textarea:-moz-placeholder {
+  opacity: 1 !important;
+}
+
+textarea:-ms-input-placeholder {
+  opacity: 1 !important;
+}
+
+input[type='submit']::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+input[type='button']::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
@@ -201,18 +347,18 @@ small {
 
 sub,
 sup {
+  position: relative;
   font-size: 75%;
   line-height: 0;
-  position: relative;
   vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 /* Embedded content
@@ -242,8 +388,8 @@ svg:not(:root) {
  */
 
 hr {
-  box-sizing: content-box;
   height: 0;
+  box-sizing: content-box;
 }
 
 /**
@@ -286,9 +432,9 @@ input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
   margin: 0; /* 3 */
+  font: inherit; /* 2 */
+  color: inherit; /* 1 */
 }
 
 /**
@@ -320,9 +466,9 @@ select {
  */
 
 button,
-html input[type="button"], /* 1 */
-input[type="reset"],
-input[type="submit"] {
+html input[type='button'], 
+input[type='reset'],
+input[type='submit'] {
   -webkit-appearance: button; /* 2 */
   cursor: pointer; /* 3 */
 }
@@ -342,8 +488,8 @@ html input[disabled] {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
 }
 
 /**
@@ -363,10 +509,10 @@ input {
  * 2. Remove excess padding in IE 8/9/10.
  */
 
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box; /* 1 */
+input[type='checkbox'],
+input[type='radio'] {
   padding: 0; /* 2 */
+  box-sizing: border-box; /* 1 */
 }
 
 /**
@@ -375,8 +521,8 @@ input[type="radio"] {
  * decrement button to change from `default` to `text`.
  */
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -385,7 +531,7 @@ input[type="number"]::-webkit-outer-spin-button {
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
 
-input[type="search"] {
+input[type='search'] {
   -webkit-appearance: textfield; /* 1 */
   box-sizing: content-box; /* 2 */
 }
@@ -396,8 +542,8 @@ input[type="search"] {
  * padding (and `textfield` appearance).
  */
 
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -406,9 +552,9 @@ input[type="search"]::-webkit-search-decoration {
  */
 
 fieldset {
-  border: 1px solid #c0c0c0;
   margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+  padding: .35em .625em .75em;
+  border: 1px solid #c0c0c0;
 }
 
 /**
@@ -417,8 +563,8 @@ fieldset {
  */
 
 legend {
-  border: 0; /* 1 */
   padding: 0; /* 2 */
+  border: 0; /* 1 */
 }
 
 /**

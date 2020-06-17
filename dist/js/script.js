@@ -36,5 +36,4 @@ function anchor() {
     dataTarget[0].scrollIntoView({behavior: 'smooth'});
     navigation.classList.toggle('navigation_active');
     sandwichButton.classList.toggle('sandwich_active');
-    //event.preventDefault();
 }

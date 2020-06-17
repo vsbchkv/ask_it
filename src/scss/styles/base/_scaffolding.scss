@@ -1,23 +1,25 @@
 * {
   box-sizing: border-box;
-  &:before, &:after {
+
+  &:before,
+  &:after {
     box-sizing: inherit;
   }
 }
 
 body {
-  min-height: 100%;
-  height: 100%;
   width: 100%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100%;
   font-family: $lato;
   font-size: 16px;
   color: $white;
-  min-width: 320px;
 }
 
 a {
-  text-decoration: none;
   color: $turquoise;
+  text-decoration: none;
 }
 
 input {
@@ -32,76 +34,81 @@ button {
 .section-title {
   position: relative;
   font-size: 6.167vw;
-  color: $turquoise;
-  text-align: center;
   font-weight: 300;
   letter-spacing: 0.5vw;
+  text-align: center;
+  color: $turquoise;
 
-  &:before, &:after {
-    content: "";
+  &:before,
+  &:after {
+    content: '';
     position: absolute;
     display: block;
     background-color: $turquoise;
     border-radius: 1.33333vw;
-
   }
 
   &:after {
+    bottom: -1vw;
+    left: 0.7vw;
     width: vw($mobile, 58px);
     height: vw($mobile, 4px);
-    left: 0.7vw;
-    bottom: -1vw;
   }
+
   &:before {
+    bottom: -1vw;
+    left: 8.8vw;
     width: vw($mobile, 10px);
     height: vw($mobile, 4px);
-    left: 8.8vw;
-    bottom: -1vw;
   }
 }
 
 .icon {
-  background-image: url("#{$imgPath}/ask_it_sprite.png");
+  background-image: url('#{$imgPath}/ask_it_sprite.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 // Tablet
 @media screen and (min-width: $tabletPortrait) and (max-width: $tabletLandscape) {
+
   .section-title {
     font-size: 3.467vw;
 
     &:after {
+      bottom: -0.6vw;
+      left: 0.3vw;
       width: 4.233vw;
       height: 0.333vw;
-      left: 0.3vw;
-      bottom: -0.6vw;
     }
+
     &:before {
+      bottom: -0.6vw;
+      left: 4.9vw;
       width: 0.733vw;
       height: 0.333vw;
-      left: 4.9vw;
-      bottom: -0.6vw;
     }
   }
 }
 
 // Desktop
 @media screen and (min-width: $tabletLandscape + 1px) {
+
   .section-title {
     font-size: 68px;
 
     &:after {
+      bottom: -5px;
+      left: 4px;
       width: 60px;
       height: 3px;
-      left: 4px;
-      bottom: -5px;
     }
+
     &:before {
+      bottom: -5px;
+      left: 70px;
       width: 12px;
       height: 3px;
-      left: 70px;
-      bottom: -5px;
     }
   }
 }

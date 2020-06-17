@@ -9,27 +9,27 @@ const config = {
   // html
   html: {
     src: 'src/index.html',
-    dist: 'build/'
+    dist: 'dist/'
   },
   // css
   styles: {
     src: 'src/scss/**/*.scss',
-    dist: 'build/css/'
+    dist: 'dist/css/'
   },
   // img
   images: {
     src: 'src/img/**/*.*',
-    dist: 'build/img/'
+    dist: 'dist/img/'
   },
   // fonts
   fonts: {
     src: 'src/fonts/**/*.*',
-    dist: 'build/fonts/'
+    dist: 'dist/fonts/'
   },
   // scipts
   scripts: {
     src: 'src/js/**/*.js',
-    dist: 'build/js/'
+    dist: 'dist/js/'
   }
 };
 
@@ -72,7 +72,7 @@ function load() {
   server.init({
     port: 7070,
     server: {
-      baseDir: "build/",
+      baseDir: "dist/",
     }
   });
 }
