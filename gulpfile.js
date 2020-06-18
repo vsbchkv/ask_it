@@ -2,6 +2,7 @@ const { gulp, watch, series, src, dest, parallel } = require('gulp');
 const sass = require('gulp-sass');
 const plumber = require('gulp-plumber');
 const server = require('browser-sync').create();
+const htmlmin = require('gulp-htmlmin');
 const postcss = require('gulp-postcss');
 
 // path
@@ -36,7 +37,10 @@ const config = {
 // html
 function html() {
   return src(config.html.src)
-    .pipe(plumber())
+    .pipe(htmlmin({
+      removeComments: true,
+      collapseWhitespace: true
+    }))
     .pipe(dest(config.html.dist))
     .pipe(server.stream());
 }
