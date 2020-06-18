@@ -29,7 +29,6 @@
   text-align: center;
   color: $white;
 }
-/* stylelint-enable */
 
 .header__link {
   position: relative;
@@ -165,6 +164,7 @@
   }
 
   .navigation__link {
+
     @supports (background-clip: text) {
       color: transparent;
       background: linear-gradient(to right, $white, $turquoise);
@@ -172,9 +172,9 @@
     }
     /* stylelint-disable */
     @supports (-webkit-text-fill-color: transparent) {
-  
+
       background: linear-gradient(to right, $white, $turquoise);
-  
+
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;

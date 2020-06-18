@@ -225,6 +225,7 @@
 
   .intro {
     background: url('#{$imgPath}/intro_dt_bg.jpg') no-repeat;
+    background-size: cover;
   }
 
   .intro__wrapper {

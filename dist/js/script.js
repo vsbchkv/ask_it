@@ -4,8 +4,10 @@ const sandwichButton = document.getElementsByClassName('header__sandwich')[0];
 function sandwich() {
     let navigation = document.getElementsByClassName('header__nav')[0];
     let sandwichButton = document.getElementsByClassName('header__sandwich')[0];
+    const body = document.getElementsByTagName('body')[0];
     navigation.classList.toggle('navigation_active');
     sandwichButton.classList.toggle('sandwich_active');
+    body.classList.toggle('body_fixed');
 }
 
 const navLink = document.querySelectorAll('.anchor');

@@ -8,6 +8,7 @@
 }
 
 body {
+  position: relative;
   width: 100%;
   min-width: 320px;
   height: 100%;
@@ -67,6 +68,11 @@ button {
   background-image: url('#{$imgPath}/ask_it_sprite.png');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.body_fixed {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 // Tablet
