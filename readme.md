@@ -3,6 +3,8 @@ Ask It - Markup Project
 
 Тестовый проект по верстке.
 
+Демо https://vsbchkv.github.io/ask_it/dist/
+
 Использованы: Gulp, HTML, SCSS, Vanilla JS.
 
 
