@@ -17,7 +17,7 @@
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-plumber": "^1.2.1",
-    "postcss": "^7.0.25",
+    "postcss": "^7.0.36",
     "postcss-csso": "^4.0.0",
     "postcss-discard-comments": "^4.0.2"
   },
